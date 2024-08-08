@@ -29,10 +29,19 @@ public class FundReportService {
     }
 
     public String generateFundReport(String fundName, LocalDateTime startDate, LocalDateTime endDate, List<String> newsSummaries) throws IOException {
-        // 1. 프롬프트 생성
-        String prompt = createPrompt(fundName, startDate, endDate, newsSummaries);
+        // 1. 운용 보고 작성
+        String operationReportPrompt = createOperationReportPrompt(fundName, startDate, endDate, newsSummaries);
+        String operationReport = requestGptResponse(operationReportPrompt);
 
-        // 2. GPT API 호출
+        // 2. 향후 운용 계획 작성
+        String futurePlanPrompt = createFuturePlanPrompt(fundName, startDate, endDate, newsSummaries);
+        String futurePlan = requestGptResponse(futurePlanPrompt);
+
+        // 최종 보고서 형식으로 합치기
+        return "펀드의 운용 보고서:\n" + operationReport + "\n\n향후 운용 계획:\n" + futurePlan;
+    }
+
+    private String requestGptResponse(String prompt) throws IOException {
         GptRequest gptRequest = new GptRequest("gpt-3.5-turbo", prompt);
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + chatGptApiKey);
@@ -53,14 +62,20 @@ public class FundReportService {
         }
     }
 
-    private String createPrompt(String fundName, LocalDateTime startDate, LocalDateTime endDate, List<String> newsSummaries) {
-        // 뉴스 기사의 summary를 텍스트로 변환
-        String articlesText = newsSummaries.stream()
-                .collect(Collectors.joining("\n"));
+    private String createOperationReportPrompt(String fundName, LocalDateTime startDate, LocalDateTime endDate, List<String> newsSummaries) {
+        String articlesText = newsSummaries.stream().collect(Collectors.joining("\n"));
 
-        // 프롬프트 구성
         return String.format(
-                "펀드 이름: %s\n운용 기간: %s ~ %s\n관련 뉴스 요약:\n%s\n위 정보를 바탕으로 펀드의 운용 보고서와 향후 운용 계획을 작성해 주세요.",
+                "펀드 이름: %s\n운용 기간: %s ~ %s\n관련 뉴스 요약:\n%s\n위 정보를 바탕으로 펀드의 운용 보고서를 작성해 주세요.",
+                fundName, startDate, endDate, articlesText
+        );
+    }
+
+    private String createFuturePlanPrompt(String fundName, LocalDateTime startDate, LocalDateTime endDate, List<String> newsSummaries) {
+        String articlesText = newsSummaries.stream().collect(Collectors.joining("\n"));
+
+        return String.format(
+                "펀드 이름: %s\n운용 기간: %s ~ %s\n관련 뉴스 요약:\n%s\n위 정보를 바탕으로 펀드의 향후 운용 계획을 작성해 주세요.",
                 fundName, startDate, endDate, articlesText
         );
     }

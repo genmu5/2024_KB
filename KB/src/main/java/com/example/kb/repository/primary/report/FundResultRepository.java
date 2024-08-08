@@ -1,4 +1,4 @@
-package com.example.kb.repository.report;
+package com.example.kb.repository.primary.report;
 import com.example.kb.entity.spring.report.FundResult;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

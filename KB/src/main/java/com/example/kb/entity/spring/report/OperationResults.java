@@ -8,6 +8,7 @@ public class OperationResults {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Fund_ID")
     private Integer fundId;
 
     @Column(name = "Fund_Name")
@@ -16,6 +17,7 @@ public class OperationResults {
     @Column(name = "Operation_Period")
     private String operationPeriod;
 
+    @Column(name = "commentary")
     private String commentary;
 
     public Integer getFundId() {

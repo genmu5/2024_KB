@@ -1,7 +1,6 @@
 package com.example.kb.entity.spring.report;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
 @Entity
@@ -10,26 +9,52 @@ public class MarketStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Fund_ID")
     private Integer fundId;
 
-    @Column(name = "Fund_Name")
+    @Column(name = "fund_name")
     private String fundName;
 
-    @Column(name = "Operation_Period")
+    @Column(name = "operation_period")
     private String operationPeriod;
+
+    @Column(name = "Asset_Total")
     private Long assetTotal;
+
+    @Column(name = "Asset_Previous")
     private Long assetPrevious;
+
+    @Column(name = "Debt_Total")
     private Long debtTotal;
+
+    @Column(name = "Debt_Previous")
     private Long debtPrevious;
+
+    @Column(name = "Net_Asset_Total")
     private Long netAssetTotal;
+
+    @Column(name = "Net_Asset_Previous")
     private Long netAssetPrevious;
+
+    @Column(name = "standard_price_current")
     private BigDecimal standardPriceCurrent;
+
+    @Column(name = "standard_price_previous")
     private BigDecimal standardPricePrevious;
+
+    @Column(name = "growth_rate_asset")
     private String growthRateAsset;
+
+    @Column(name = "growth_rate_debt")
     private String growthRateDebt;
+
+    @Column(name = "growth_rate_net_asset")
     private String growthRateNetAsset;
+
+    @Column(name = "growth_rate_standard_price")
     private String growthRateStandardPrice;
 
+    // Getters and setters
     public Integer getFundId() {
         return fundId;
     }

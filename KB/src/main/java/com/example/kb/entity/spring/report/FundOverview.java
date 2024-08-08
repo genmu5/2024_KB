@@ -10,19 +10,31 @@ import java.util.Date;
 public class FundOverview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Fund_ID")
     private Integer fundId;
 
-    @Column(nullable = false)
+    @Column(name = "fund_name")
     private String fundName;
 
-    @Column(nullable = false)
+    @Column(name = "operation_period")
     private String operationPeriod;
 
+    @Column(name = "fund_type")
     private String fundType;
+
+    @Column(name = "initial_setting_date")
     private Date initialSettingDate;
+
+    @Column(name = "duration")
     private String duration;
+
+    @Column(name = "operation_size")
     private BigDecimal operationSize;
+
+    @Column(name = "setting_date")
     private Date settingDate;
+
+    @Column(name = "risk_level")
     private String riskLevel;
 
     public Integer getFundId() {

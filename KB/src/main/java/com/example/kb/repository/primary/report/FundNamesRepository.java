@@ -1,4 +1,4 @@
-package com.example.kb.repository.report;
+package com.example.kb.repository.primary.report;
 
 
 import com.example.kb.entity.spring.report.FundNames;

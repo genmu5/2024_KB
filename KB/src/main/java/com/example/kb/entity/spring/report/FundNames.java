@@ -9,28 +9,31 @@ import java.util.Date;
 public class FundNames {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Fund_ID")
     private Integer fundId;
 
-    @Column(nullable = false)
+    @Column(name = "fund_name")
     private String fundName;
 
-    @Column(nullable = false)
+    @Column(name = "operation_period")
     private String operationPeriod;
 
-    @Column(nullable = false)
+    @Column(name = "setting_date")
     private Date settingDate;
 
-    @Column(nullable = false)
+    @Column(name = "trust_fee")
     private String trustFee;
 
-    @Column(nullable = false)
+    @Column(name = "operation_size")
     private String operationSize;
 
-    @Column(nullable = false)
+    @Column(name = "sales_method")
     private String salesMethod;
 
+    @Column(name = "benchmark")
     private String benchmark;
 
+    @Column(name = "investment_objective")
     private String investmentObjective;
 
     // Getters and Setters

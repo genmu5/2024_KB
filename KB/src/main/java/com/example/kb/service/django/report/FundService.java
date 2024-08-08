@@ -3,7 +3,7 @@ package com.example.kb.service.django.report;
 
 import com.example.kb.entity.spring.report.*;
 
-import com.example.kb.repository.report.*;
+import com.example.kb.repository.primary.report.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

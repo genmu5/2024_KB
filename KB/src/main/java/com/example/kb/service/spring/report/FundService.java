@@ -1,4 +1,4 @@
-package com.example.kb.service.django.report;
+package com.example.kb.service.spring.report;
 
 
 import com.example.kb.entity.spring.report.*;

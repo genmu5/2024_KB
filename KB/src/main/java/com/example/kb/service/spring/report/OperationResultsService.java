@@ -3,7 +3,7 @@ package com.example.kb.service.spring.report;
 import com.example.kb.dto.spring.GptRequest;
 import com.example.kb.dto.spring.GptResponse;
 import com.example.kb.entity.spring.report.OperationResults;
-import com.example.kb.repository.primary.OperationResultsRepository;
+import com.example.kb.repository.primary.report.OperationResultsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

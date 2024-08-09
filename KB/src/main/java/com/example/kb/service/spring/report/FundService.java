@@ -1,7 +1,7 @@
 package com.example.kb.service.spring.report;
 import com.example.kb.entity.spring.report.*;
 
-import com.example.kb.repository.primary.*;
+import com.example.kb.repository.primary.report.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

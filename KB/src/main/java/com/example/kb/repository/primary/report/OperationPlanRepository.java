@@ -1,4 +1,4 @@
-package com.example.kb.repository.primary;
+package com.example.kb.repository.primary.report;
 
 import com.example.kb.entity.spring.report.OperationPlan;
 import org.springframework.context.annotation.Primary;

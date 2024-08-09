@@ -7,7 +7,8 @@ import jakarta.persistence.*;
 public class OperationPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Fund_ID;
+    @Column(name = "Fund_ID")
+    private Integer fundId;
 
     @Column(name = "Fund_Name")
     private String fundName;
@@ -18,13 +19,7 @@ public class OperationPlan {
     @Column(name = "Plan_Details")
     private String planDetails;
 
-    public Integer getFund_ID() {
-        return Fund_ID;
-    }
 
-    public void setFund_ID(Integer fund_ID) {
-        Fund_ID = fund_ID;
-    }
 
     public String getFundName() {
         return fundName;
@@ -49,5 +44,13 @@ public class OperationPlan {
 
     public void setPlanDetails(String planDetails) {
         this.planDetails = planDetails;
+    }
+
+    public Integer getFundId() {
+        return fundId;
+    }
+
+    public void setFundId(Integer fundId) {
+        this.fundId = fundId;
     }
 }

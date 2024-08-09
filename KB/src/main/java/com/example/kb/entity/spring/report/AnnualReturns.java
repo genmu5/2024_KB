@@ -8,12 +8,13 @@ public class AnnualReturns {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Fund_ID")
     private Integer Fund_ID;
 
-    @Column(nullable = false)
+    @Column(name = "fund_name", nullable = false)
     private String fundName;
 
-    @Column(nullable = false)
+    @Column(name = "operation_period", nullable = false)
     private String operationPeriod;
 
     @Column(name = "Return_2021")

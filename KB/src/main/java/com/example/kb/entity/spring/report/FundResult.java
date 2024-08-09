@@ -7,13 +7,13 @@ import jakarta.persistence.*;
 public class FundResult {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Fund_ID")
     private Integer fundId;
 
-    @Column(nullable = false)
+    @Column(name = "fund_name", nullable = false)
     private String fundName;
 
-    @Column(nullable = false)
+    @Column(name = "operation_period", nullable = false)
     private String operationPeriod;
 
     private Double Period_3M;

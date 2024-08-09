@@ -1,33 +1,39 @@
-package com.example.kb.service.spring.report;
+package com.example.kb.service.django.report;
+
+
 import com.example.kb.entity.spring.report.*;
 
 import com.example.kb.repository.primary.report.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class FundService {
+    @Autowired
+    private FundOverviewRepository fundOverviewRepository;
 
-    private final FundOverviewRepository fundOverviewRepository;
-    private final FundNamesRepository fundNamesRepository;
-    private final FundResultRepository fundResultRepository;
-    private final AnnualReturnsRepository annualReturnsRepository;
-    private final ClassPriceStatusRepository classPriceStatusRepository;
-    private final MarketStatusRepository marketRepository;
-    private final OperationPlanRepository operationPlanRepository;
-    private final OperationResultsRepository operationResultsRepository;
+    @Autowired
+    private FundNamesRepository fundNamesRepository;
 
-    public FundService(FundOverviewRepository fundOverviewRepository, FundNamesRepository fundNamesRepository, FundResultRepository fundResultRepository, AnnualReturnsRepository annualReturnsRepository, ClassPriceStatusRepository classPriceStatusRepository, MarketStatusRepository marketRepository, OperationPlanRepository operationPlanRepository, OperationResultsRepository operationResultsRepository) {
-        this.fundOverviewRepository = fundOverviewRepository;
-        this.fundNamesRepository = fundNamesRepository;
-        this.fundResultRepository = fundResultRepository;
-        this.annualReturnsRepository = annualReturnsRepository;
-        this.classPriceStatusRepository = classPriceStatusRepository;
-        this.marketRepository = marketRepository;
-        this.operationPlanRepository = operationPlanRepository;
-        this.operationResultsRepository = operationResultsRepository;
-    }
+    @Autowired
+    private FundResultRepository fundResultRepository;
+
+    @Autowired
+    private AnnualReturnsRepository annualReturnsRepository;
+
+    @Autowired
+    private ClassPriceStatusRepository classPriceStatusRepository;
+
+    @Autowired
+    private MarketStatusRepository marketRepository;
+
+    @Autowired
+    private OperationPlanRepository operationPlanRepository;
+
+    @Autowired
+    private OperationResultsRepository operationResultsRepository;
 
     public FundOverview getFundOverview(String fundName, String operationPeriod) {
         return fundOverviewRepository.findByFundNameAndOperationPeriod(fundName, operationPeriod)

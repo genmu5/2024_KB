@@ -2,8 +2,8 @@ package com.example.kb.controller.django.report;
 
 
 import com.example.kb.entity.spring.report.*;
-import com.example.kb.service.django.report.FundService;
-import com.example.kb.service.django.report.ResourceNotFoundException;
+import com.example.kb.service.spring.report.FundService;
+import com.example.kb.service.spring.report.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

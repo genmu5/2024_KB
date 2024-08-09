@@ -10,7 +10,6 @@ import java.util.List;
 @Setter
 public class FundReportRequest {
     private String fundName;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private String operationPeriod; // 수정된 부분
     private List<String> newsSummaries;
 }

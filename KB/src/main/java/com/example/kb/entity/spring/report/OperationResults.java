@@ -16,6 +16,7 @@ public class OperationResults {
     @Column(name = "Operation_Period")
     private String operationPeriod;
 
+    @Column(name = "Commentary")
     private String commentary;
 
     public Integer getFundId() {

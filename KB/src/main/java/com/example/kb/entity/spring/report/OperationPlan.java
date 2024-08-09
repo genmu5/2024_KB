@@ -15,6 +15,7 @@ public class OperationPlan {
     @Column(name = "Operation_Period")
     private String operationPeriod;
 
+    @Column(name = "Plan_Details")
     private String planDetails;
 
     public Integer getFund_ID() {

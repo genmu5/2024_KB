@@ -15,4 +15,5 @@ import java.util.List;
 public interface ClassPriceStatusRepository extends JpaRepository<ClassPriceStatus, Integer> {
     @Query("SELECT c FROM ClassPriceStatus c WHERE c.fundName = :fundName AND c.operationPeriod = :operationPeriod")
     List<ClassPriceStatus> findClassPriceStatus(@Param("fundName") String fundName, @Param("operationPeriod") String operationPeriod);
+    List<ClassPriceStatus> findByFundNameAndOperationPeriod(String fundName, String operationPeriod);
 }

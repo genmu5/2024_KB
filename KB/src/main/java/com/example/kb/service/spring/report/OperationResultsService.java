@@ -94,7 +94,7 @@ public class OperationResultsService {
         }
         String comment = getPreviousOperationResultsFromDB(fundName, operationPeriod);
         return String.format(
-                "펀드 이름: %s\n운용 기간: %s\n관련 뉴스 요약:\n%s\n위 이전버전의 시장 현황 및 운용경과는 %s\n 펀드의 %s \n이 정보를 바탕으로 펀드의 시장 현황 및 운용경과를 작성해 주세요. 작성할때 그냥 줄글의 텍스트로 600자 이내로 작성해줘",
+                "펀드 이름: %s\\n운용 기간: %s\\n관련 뉴스 요약:\\n%s\\n위 이전버전의 시장 현황 및 운용경과는 %s\\n 펀드의 자산정보는 %s \\n이 정보를 바탕으로 펀드의 시장 현황 및 운용경과를 작성해 주세요. 주어진 정보들을 바탕으로 이전 보고서와 같은 흐름으로 이 펀드의 운용 결과와 최근 성과를 시장 현황과 결합하여 작성하고, 작성할때 한 문단의 줄글의 텍스트로 400자 이하로 작성해주세요. 어미는 입니다와 습니다로 맞춰주세요.",
                 fundName, operationPeriod, articlesText,comment,fundInfoBuilder.toString()
         );
 //        String prompt = String.format(

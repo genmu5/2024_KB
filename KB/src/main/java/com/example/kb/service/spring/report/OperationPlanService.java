@@ -100,7 +100,7 @@ public class OperationPlanService {
         }
         String plan = getPreviousOperationPlanFromDB(fundName, operationPeriod);
         return String.format(
-                "펀드 이름: %s\n운용 기간: %s\n관련 뉴스 요약:\n%s\n 이전 버전의 운용계획은 %s \n %s\n 위 정보를 바탕으로 펀드의 향후 운용 계획을 작성해 주세요. 작성할때 그냥 줄글의 텍스트로 작성해줘",
+                "펀드 이름: %s\n운용 기간: %s\n관련 뉴스 요약:\n%s\n 이전 버전의 운용계획은 %s \n %s\n 위 정보를 바탕으로 펀드의 향후 운용 계획을 작성해 주세요. 작성할때 그냥 줄글의 텍스트로 600자 이내로 작성해줘",
                 fundName, operationPeriod, articlesText, plan, fundInfoBuilder.toString()
         );
 
